@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="videos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Videos</title>
+</head>
+<body>
+
+        <header>
+            <a href="#" class="brand"> LAYE PRO</a>
+            <div class="menu-btn"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Explore</a>
+                    <a href="#">Gallery</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </header>
+
+        <section class="home">
+            <video class="video-slide active" src="Fii moy Senegal.mp4" autoplay muted loop></video>
+
+            <video class="video-slide" src="ter.mp4" autoplay muted loop></video>
+
+            <video class="video-slide" src="Fii moy Senegal.mp4" autoplay muted loop></video>
+
+            <video class="video-slide" src="ter.mp4" autoplay muted loop></video>
+
+            <video class="video-slide" src="Fii moy Senegal.mp4" autoplay muted loop></video>
+
+
+            <div class="content active">
+                <h1>Fii moy <br> <span>SENEGAL</span></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur officia illo recusandae alias ab inventore, rem optio amet est provident, impedit debitis soluta dignissimos corporis voluptas dicta possimus architecto! Ab.</p>
+                <a href="#">Read more</a>
+            </div>
+
+            <div class="content">
+                <h1>TER <br> <span>Gare de DAKAR</span></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur officia illo recusandae alias ab inventore, rem optio amet est provident, impedit debitis soluta dignissimos corporis voluptas dicta possimus architecto! Ab.</p>
+                <a href="#">Read more</a>
+            </div>
+
+
+            <div class="media-icon">
+                <a href="#"> <i class="fab fa-facebook-f"></i></a>
+                <a href="#"> <i class="fab fa-instagram"></i></a>
+                <a href="#"> <i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="slide-nav">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+            </div>
+        </section>
+
+
+
+        <script type="text/javascript">
+
+            const menubtn= document.querySelector(".menu-btn");
+            const navigation = document.querySelector(".navigation");
+
+            menubtn.addEventListener("click", ()=>{
+                menubtn.classList.toggle("active");
+                navigation.classList.toggle("active");
+            });
+
+            const btns = document.querySelectorAll(".nav-btn");
+            const slides = document.querySelectorAll(".video-slide");
+            const contents = document.querySelectorAll(".content");
+
+
+            var slideNav = function (manuel){
+
+                btns.forEach((btn)=>{
+                    btn.classList.remove("active");
+                });
+
+                slides.forEach((slide)=>{
+                    slide.classList.remove("active");
+                });
+
+                contents.forEach((content)=>{
+                    content.classList.remove("active");
+                });
+
+                btns[manuel].classList.add("active");
+                slides[manuel].classList.add("active");
+                contents[manuel].classList.add("active");
+            }
+
+            btns.forEach((btn, i) => {
+                btn.addEventListener("click", () =>{
+                    slideNav(i);
+                });
+            });
+        </script>
+
+
+
+
+
+
+
+    <script src="videos.js"></script>
+</body>
+</html>
